@@ -1,0 +1,196 @@
+@import 'styles/variables';
+
+.wrapper {
+  :global {
+    .form-imitation {
+      label {
+        border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+        padding-bottom: 0.5rem;
+      }
+      input {
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        z-index: 5;
+      }
+    }
+    .menu_wrapper {
+      position: absolute;
+      top: -1.5rem;
+      right: 0;
+      //width: 100%;
+      width: max-content;
+      min-width: 12rem;
+      border-radius: 8px;
+      padding: 1.5rem;
+      z-index: 2;
+      .sortCurrentStatus {
+        position: absolute;
+        top: 1.5rem;
+        right: 3rem;
+        opacity: 1;
+        z-index: -1;
+        @media (max-width: $lg) {
+          display: none;
+        }
+      }
+      .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        //margin-left: auto;
+        position: absolute;
+        top: 1.5rem;
+        right: 0.5rem;
+        z-index: 1;
+        span {
+          transition: all 0.2s linear;
+          display: block;
+          position: relative;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $color-black;
+        }
+        span + span {
+          margin-top: 3px;
+        }
+      }
+      .category-list {
+        font-weight: 600;
+        overflow: hidden;
+        max-height: 0;
+      }
+      &.open {
+        z-index: 7;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 60px rgba(109, 66, 27, 0.06);
+        .sortCurrentStatus {
+          opacity: 0;
+        }
+        .button {
+          span:nth-child(1) {
+            width: 16px;
+            height: 2px;
+            transform: rotate(45deg);
+            top: 6px;
+          }
+          span:nth-child(2) {
+            opacity: 0;
+          }
+          span:nth-child(3) {
+            width: 16px;
+            height: 2px;
+            transform: rotate(-45deg);
+            bottom: 6px;
+          }
+        }
+        .category-list {
+          overflow: auto;
+          max-height: 100vh;
+        }
+      }
+    }
+    .article-wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      @media (min-width: $lg) {
+        max-width: 62%;
+      }
+      @media (min-width: $xxl) {
+        max-width: 51.5%;
+      }
+      .icons-wrapper {
+        @media (max-width: $xs) {
+          padding-top: 1rem;
+          width: 100%;
+        }
+      }
+    }
+    .mainImageWrapper {
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        @media (min-width: $lg) {
+          border-radius: 1.25rem;
+        }
+      }
+      @media (min-width: $lg) {
+        max-width: 82%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      @media (min-width: $xxl) {
+        max-width: 77.5%;
+      }
+    }
+    .post-reading {
+      flex: 1;
+      margin-left: 1.5rem;
+      padding-left: 1.5rem;
+      border-left: 1px solid rgba(75, 74, 91, 0.4);
+    }
+    a.like-red {
+      svg {
+        path {
+          stroke: #F94144;
+          fill: #F94144;
+        }
+      }
+    }
+    .reviews-block {
+      .review {
+        &::before {
+          left: 0;
+          top: 0;
+          width: 40px;
+          height: 30px;
+          background: url('/icons/quote_up.svg') no-repeat center/cover;
+          @media (min-width: $lg) {
+            top: -1em;
+            width: 50px;
+            height: 38px;
+          }
+        }
+        &::after {
+          right: 0;
+          bottom: -1.25em;
+          width: 40px;
+          height: 30px;
+          background: url('/icons/quote_down.svg') no-repeat center/cover;
+          @media (min-width: $lg) {
+            width: 50px;
+            height: 38px;
+          }
+        }
+      }
+    }
+    .shareGroup-wrapper {
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      z-index: 1;
+      background-color: $color-bgLight;
+      box-shadow: 0 0 30px $color-bgLight;
+    }
+    .active > .shareGroup-wrapper {
+      display: flex;
+    }
+    .recommendPostCard {
+      .title {
+        display: block;
+        @media (min-width: $lg) {
+          min-height: 3.875rem;
+          max-height: 3.875rem;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

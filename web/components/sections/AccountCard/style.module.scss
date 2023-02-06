@@ -1,0 +1,60 @@
+@import 'styles/variables';
+
+.cart {
+  @media (min-width: $lg) {
+    min-width: 146px;
+    min-height: 48px;
+    border: 1px solid rgba(75, 74, 91, 0.4);
+    border-radius: 24px;
+    padding: 3px;
+  }
+  :global {
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      overflow: hidden;
+      @media (min-width: $lg) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .user-name {
+      &.open {
+        .svg-wrap {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .options-list {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      border-radius: 8px;
+      z-index: 3;
+      &.open {
+        display: block;
+      }
+      .options-list__item {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        svg {
+          path {
+            transition: all 0.2s linear;
+          }
+        }
+        &:hover {
+          color: $color-red;
+          background-color: rgba(249, 65, 68, 0.05);
+          svg {
+            path:not(.mustBeUnchanged) {
+              fill: $color-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

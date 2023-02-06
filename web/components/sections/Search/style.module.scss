@@ -1,0 +1,95 @@
+@import 'styles/variables';
+
+.searchWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  background-color: rgba(75, 74, 91, 0.8);
+  backdrop-filter: blur(40px);
+  padding: 9rem 1rem;
+
+  :global {
+    .searchWindow {
+      width: 100%;
+      max-width: 35rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5vh;
+      background-color: #FFFBF7;
+      box-shadow: 0 2px 60px rgba(109, 66, 27, 0.06);
+      border-radius: 1.25rem;
+      padding: 2rem;
+    }
+
+    .ais-SearchBox-form {
+      position: relative;
+      &::before {
+        content: url('/icons/search.svg');
+        line-height: 0.5rem;
+        position: absolute;
+        left: 0;
+        top: 0.25rem;
+      }
+
+      .ais-SearchBox-input {
+        padding-left: 2rem;
+        padding-bottom: 0.5rem;
+        width: 100%;
+        font: inherit;
+        color: inherit;
+        border: none;
+        background-color: transparent;
+        transition: all 0.2s linear;
+
+        &:focus {
+          border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+        }
+        &::-webkit-search-cancel-button { /* псевдо что-то, что отвечает за кнопку очистки */
+          -webkit-appearance: none; /* без сброса оформление не применится */
+          width: 24px; /* размеры кастомного крестика */
+          height: 24px;
+          background: url('/icons/close.svg') no-repeat center/cover; /* новый вид крестика */
+          margin-right: 2px; /* его даже можно позиционировать */
+          cursor: pointer; /* вот это не работает */
+        }
+      }
+
+      button {
+        display: none;
+      }
+    }
+    .ais-Hits {
+      border-top: 1px solid rgba(75, 74, 91, 0.2);
+      max-height: 50vh;
+      overflow: auto;
+      .ais-Hits-list {
+        list-style: none;
+
+        .ais-Hits-item {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          .more {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            opacity: 0;
+            //height: 1.8rem;
+            transition: all 0.2s linear;
+          }
+
+          &:hover {
+            .more {
+              opacity: 1;
+            }
+          }
+        }
+        .ais-Hits-item + .ais-Hits-item {
+          border-top: 1px solid rgba(75, 74, 91, 0.2);
+        }
+      }
+    }
+  }
+}

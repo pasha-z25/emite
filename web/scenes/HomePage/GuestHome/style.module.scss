@@ -1,0 +1,485 @@
+@import 'styles/variables';
+
+.mainBanner {
+  :global {
+    .opacity-0 {
+      opacity: 0;
+    }
+    #myVideo {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .h4 {
+      @media (max-width: $lg) {
+        font-size: 1.0625rem !important;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.sliderWrapper {
+  @media (min-width: $lg) {
+    max-width: 88%;
+  }
+  :global {
+    .title {
+      &::before {
+        width: 8px;
+        height: 8px;
+        left: -1rem;
+        bottom: -9rem;
+        @media (min-width: $lg) {
+          left: 7rem;
+          bottom: 1rem;
+        }
+      }
+      &::after {
+        top: 0.5rem;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          top: initial;
+          right: 7rem;
+          bottom: 50%;
+        }
+      }
+    }
+    .description {
+      &::before {
+        top: -2rem;
+        left: 0;
+        width: 13px;
+        height: 12px;
+        background: url('/icons/heart.svg') no-repeat center/cover;
+        transform: rotate(-65deg);
+        @media (min-width: $lg) {
+          top: 0;
+          left: -5rem;
+          width: 25px;
+          height: 25px;
+        }
+      }
+      &::after {
+        right: -0.5rem;
+        bottom: -1rem;
+        width: 12px;
+        height: 12px;
+        @media (min-width: $lg) {
+          top: -2rem;
+          right: -6rem;
+          bottom: initial;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+.trackingSection {
+  background: linear-gradient(186.67deg, rgba(192, 215, 241, 0) 12.13%, rgba(194, 219, 242, 0.41) 28.4%, #CAF3F9 91.82%);
+  :global {
+    .general-info {
+      flex-wrap: wrap;
+      .text, .globe {
+        width: 100%;
+        @media (min-width: $xl) {
+          width: 47%;
+        }
+        @media (min-width: $xxl) {
+          width: 50%;
+        }
+      }
+      .text {
+        @media (min-width: $lg) {
+          max-width: 30rem;
+        }
+        .title {
+          &::before {
+            width: 8px;
+            height: 8px;
+            top: -3rem;
+            right: 3rem;
+          }
+          &::after {
+            right: 0;
+            bottom: 0;
+            width: 18px;
+            height: 17px;
+            background: url('/icons/heart.svg') no-repeat center/cover;
+            @media (min-width: $lg) {
+              right: -5rem;
+              width: 30px;
+              height: 28px;
+            }
+          }
+        }
+      }
+      .globe {
+        &::before {
+          left: 0;
+          bottom: 0;
+          width: 6px;
+          height: 6px;
+          @media (min-width: $xl) {
+            top: -2rem;
+            right: -2rem;
+            bottom: initial;
+            left: initial;
+            width: 8px;
+            height: 8px;
+          }
+        }
+        &::after {
+          top: 1rem;
+          right: 1rem;
+          width: 12px;
+          height: 12px;
+          @media (min-width: $xl) {
+            top: 1rem;
+            right: 1rem;
+            width: 16px;
+            height: 16px;
+          }
+        }
+        min-height: calc(100vw - 3rem);
+        @media (min-width: $xl) {
+          padding-left: 1rem;
+          min-height: 33vw;
+        }
+      }
+      @media (min-width: $xl) {
+        flex-wrap: nowrap;
+      }
+    }
+    .progress-counter {
+      flex-wrap: wrap;
+      @media (min-width: $xl) {
+        flex-wrap: nowrap;
+        width: 120%;
+        margin-left: -10%;
+      }
+      .item {
+        flex: 0 0 50%;
+        max-width: 50%;
+        @media (min-width: $xl) {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+        @media (max-width: $xl) {
+          padding: 1.5rem 0.5rem
+        }
+      }
+      .item + .item {
+        @media (min-width: $xl) {
+          border-left: 1px solid rgba(75, 74, 91, 0.3);
+        }
+      }
+      .item:nth-child(even) {
+        @media (max-width: $xl) {
+          border-left: 1px solid rgba(75, 74, 91, 0.3);
+        }
+      }
+      .item:nth-child(3), .item:nth-child(4) {
+        @media (max-width: $xl) {
+          border-top: 1px solid rgba(75, 74, 91, 0.3);
+        }
+      }
+    }
+    .promo-info {
+      &::before {
+        left: 3rem;
+        top: -5rem;
+        width: 8px;
+        height: 8px;
+        //background: linear-gradient(199.89deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0) 86.72%);
+        background: linear-gradient(185deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0) 86.72%);
+        @media (min-width: $lg) {
+          left: 7rem;
+          top: -4rem;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      &::after {
+        right: 2rem;
+        top: -5rem;
+        width: 18px;
+        height: 17px;
+        background: url('/icons/heartWhite.svg') no-repeat center/cover;
+        transform: rotate(65deg);
+        @media (min-width: $lg) {
+          right: 7rem;
+          top: -4rem;
+          width: 25px;
+          height: 25px;
+        }
+      }
+      .slogan {
+        max-width: 37rem;
+        margin-top: 3em;
+        @media (min-width: $lg) {
+          margin-top: 4em;
+        }
+        &::before {
+          content: '100%';
+          font-size: 4em;
+          font-weight: 900;
+          white-space: nowrap;
+          background: linear-gradient(185deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0.6) 49.58%, rgba(255, 255, 255, 0) 86.72%) center/100% no-repeat;
+          //-webkit-text-stroke: 1.55px $color-white;
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          position: absolute;
+          left: -0.25rem;
+          top: -0.5em;
+          z-index: -1;
+          @media (min-width: $lg) {
+            left: 0;
+          }
+        }
+      }
+      .secondary-text {
+        &::before {
+          left: 4rem;
+          //top: -2rem;
+          top: -7rem;
+          width: 130px;
+          height: 77px;
+          background: url('/icons/cloudGroup.svg') no-repeat center/cover;
+          @media (max-width: $xl) {
+            left: 0;
+            top: -2rem;
+            width: 60px;
+            height: 35px;
+            opacity: 0.8;
+          }
+        }
+        &::after {
+          right: 4rem;
+          //top: -2rem;
+          top: -7rem;
+          width: 126px;
+          height: 66px;
+          background: url('/icons/cloudBig.svg') no-repeat center/cover;
+          @media (max-width: $xl) {
+            right: 0;
+            top: -2rem;
+            width: 75px;
+            height: 40px;
+            opacity: 0.8;
+          }
+        }
+      }
+      .btn.pseudo {
+        &::before {
+          left: -4rem;
+          top: 2rem;
+          width: 20px;
+          height: 19px;
+          background: url('/icons/heartWhite.svg') no-repeat center/cover;
+          @media (min-width: $lg) {
+            left: -10rem;
+            top: 1rem;
+            width: 31px;
+            height: 31px;
+          }
+        }
+        &::after {
+          right: -3rem;
+          bottom: -1rem;
+          width: 8px;
+          height: 8px;
+          background: linear-gradient(199.89deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0) 86.72%);
+          @media (min-width: $lg) {
+            top: 0;
+            right: -12rem;
+            bottom: initial;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.charityCommunity {
+  :global {
+    .title {
+      &::before {
+        bottom: -7rem;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          left: -5rem;
+          bottom: 1rem;
+        }
+      }
+      &::after {
+        top: -1rem;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          top: initial;
+          right: -13rem;
+          bottom: 1rem;
+        }
+      }
+    }
+    .main-description {
+      &::before {
+        top: -8rem;
+        left: 0;
+        width: 15px;
+        height: 14px;
+        background: url('/icons/heart.svg') no-repeat center/cover;
+        transform: rotate(-65deg);
+        @media (min-width: $lg) {
+          top: -3rem;
+          left: -7rem;
+          width: 25px;
+          height: 25px;
+        }
+      }
+      &::after {
+        right: 0;
+        bottom: 0;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          top: 0;
+          right: -5rem;
+          bottom: initial;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    .swiper-container {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(252, 198, 105, 0.6) 25%, rgba(252, 198, 105, 0) 93.75%);
+        top: 3rem;
+        right: 1rem;
+        width: 10px;
+        height: 10px;
+        @media (min-width: $lg) {
+          top: 2rem;
+          right: 2rem;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(9, 178, 132, 0.6) 25%, rgba(9, 178, 132, 0) 93.75%);
+        top: 5rem;
+        right: 5rem;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          top: 7rem;
+          right: 7rem;
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+    .reviews-block {
+      .review {
+        &::before {
+          left: 0;
+          top: 0;
+          width: 40px;
+          height: 30px;
+          background: url('/icons/quote_up.svg') no-repeat center/cover;
+          @media (min-width: $lg) {
+            top: -1em;
+            width: 50px;
+            height: 38px;
+          }
+        }
+        &::after {
+          right: 0;
+          bottom: -1.25em;
+          width: 40px;
+          height: 30px;
+          background: url('/icons/quote_down.svg') no-repeat center/cover;
+          @media (min-width: $lg) {
+            width: 50px;
+            height: 38px;
+          }
+        }
+      }
+    }
+    .swiper-navigation {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      &::after {
+        top: -2rem;
+        right: 3rem;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          top: 7rem;
+          left: -5rem;
+          right: initial;
+          width: 12px;
+          height: 12px;
+        }
+      }
+      .swiper-button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid rgba(74, 75, 91, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s linear;
+        &:hover {
+          border-color: rgba(74, 75, 91, 1);
+        }
+      }
+      @media (min-width: $lg) and (max-width: $xl) {
+        width: calc(100% + 140px);
+        transform: translateX(-70px);
+      }
+      @media (max-width: $lg) {
+        top: initial;
+        bottom: 0;
+        justify-content: center;
+        .swiper-button + .swiper-button {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+    .swiper-pagination {
+      display: flex;
+      bottom: 1rem;
+      z-index: 10;
+      @media (max-width: $lg) {
+        display: none;
+      }
+    }
+  }
+}

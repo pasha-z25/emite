@@ -1,0 +1,139 @@
+@import 'styles/variables';
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  :global {
+    .image_block, .form_block {
+      width: 100%;
+      flex: 0 0 100%;
+      height: 100vh;
+      overflow: auto;
+      @media (min-width: $xl) {
+        width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+    .image_block {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 1.5rem 2rem;
+      @media (max-width: $xl) {
+        height: auto;
+        background-image: none !important;
+      }
+    }
+    .form_block {
+      padding: 3.5rem 2rem;
+      @media (max-width: $xl) {
+        height: auto;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+      .form-wrapper {
+        max-width: 23.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        .auth-form {
+          .label {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            margin-bottom: 2rem;
+
+            &.w50 {
+              width: calc(50% - 0.75rem);
+            }
+
+            input {
+              width: 100%;
+              border-left: none;
+              border-top: none;
+              border-right: none;
+              transition: all 0.2s linear;
+              background-color: transparent;
+              padding-top: 0.5rem;
+              padding-bottom: 1rem;
+              border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+              font: inherit;
+
+              &:focus {
+                border-bottom-color: rgba(75, 74, 91, 0.8);
+              }
+            }
+            &.error {
+              input {
+                border-bottom-color: $color-red;
+              }
+            }
+            &.email {
+              &::before {
+                content: url('/icons/email.svg');
+                position: absolute;
+                top: 0.65rem;
+                left: 0;
+              }
+
+              input {
+                padding-left: 2rem;
+              }
+            }
+            &.password {
+              &::before {
+                content: url('/icons/lock.svg');
+                position: absolute;
+                top: 0.65rem;
+                left: 0;
+              }
+
+              input {
+                padding-left: 2rem;
+              }
+            }
+            .errors {
+              top: 100%;
+              left: 0;
+            }
+          }
+          .w50 + .w50 {
+            margin-left: 1.5rem;
+          }
+        }
+        .content-line {
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 1rem;
+            top: 0.9rem;
+            width: 40%;
+            height: 1px;
+            background-color: rgba(75, 74, 91, 0.2);
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 1rem;
+            top: 0.9rem;
+            width: 40%;
+            height: 1px;
+            background-color: rgba(75, 74, 91, 0.2);
+          }
+        }
+        .btn-google {
+          position: relative;
+          &::before {
+            content: url('/icons/Google.svg');
+            position: absolute;
+            top: 50%;
+            left: 6%;
+            margin-top: -12px;
+          }
+        }
+      }
+    }
+
+  }
+}

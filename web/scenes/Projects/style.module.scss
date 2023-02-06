@@ -1,0 +1,20 @@
+@import 'styles/variables';
+
+.wrapper {
+  @media (min-width: $md) and (max-width: $xxl) {
+    max-width: 92%;
+  }
+  :global {
+    .image-radius-8 {
+      img {
+        border-radius: 8px;
+      }
+    }
+    .gallery-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1;
+    }
+  }
+}

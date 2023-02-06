@@ -1,0 +1,125 @@
+@import 'styles/variables';
+
+.wrapper {
+  &::before {
+    top: -70%;
+    left: 5%;
+    width: 16px;
+    height: 15px;
+    background: url('/icons/heart.svg') no-repeat center/cover;
+    transform: rotate(-45deg);
+    @media (min-width: $xl) {
+      top: 0;
+      left: 10%;
+      width: 25px;
+      height: 22px;
+    }
+  }
+  &::after {
+    top: -80%;
+    right: 5%;
+    width: 6px;
+    height: 6px;
+    @media (min-width: $xl) {
+      top: 0;
+      right: 15%;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  :global {
+    .ais-SearchBox-form {
+      position: relative;
+      max-width: 36.5rem;
+      margin-left: auto;
+      margin-right: auto;
+
+      .ais-SearchBox-input {
+        font: inherit;
+        width: 100%;
+        padding-bottom: 0.75rem;
+        background-color: transparent;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+        color: rgba(75, 74, 91, 0.8);
+      }
+      .ais-SearchBox-submit {
+        position: absolute;
+        right: 0;
+        bottom: 0.75rem;
+        border: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $color-red;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s linear;
+        &:hover {
+          background-color: #E21725;
+        }
+        svg.ais-SearchBox-submitIcon {
+          transform: scale(1.2);
+          path {
+            fill: $color-white;
+            transform: scale(1.05);
+          }
+        }
+      }
+      [type="reset"] {
+        display: none;
+      }
+    }
+    .ais-Hits {
+      background: rgba(255, 251, 247, 0.4);
+      //backdrop-filter: blur(40px);
+      backdrop-filter: blur(16px);
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      min-height: 30rem;
+      .ais-Hits-list {
+        list-style: none;
+        border-radius: 1.25rem;
+        max-width: 36.5rem;
+        max-height: 30rem;
+        overflow: auto;
+        background-color: $color-white;
+        box-shadow: 0 2px 60px rgba(109, 66, 27, 0.06);
+        margin: 1rem auto;
+        padding: 1rem 2rem;
+
+        .ais-Hits-item {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          .more {
+            display: inline-block;
+            overflow: hidden;
+            opacity: 0;
+            //height: 1.8rem;
+            transition: all 0.2s linear;
+          }
+
+          &:hover {
+            .more {
+              opacity: 1;
+              + span {
+                svg {
+                  path {
+                    stroke: $color-red
+                  }
+                }
+              }
+            }
+          }
+        }
+        .ais-Hits-item + .ais-Hits-item {
+          border-top: 1px solid rgba(75, 74, 91, 0.2);
+        }
+      }
+    }
+  }
+}

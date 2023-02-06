@@ -1,0 +1,47 @@
+[
+  {
+    "id": "item-0",
+    "title": "Where does Mite work?",
+    "description": "We work worldwide, wherever our partner organizations are doing good! So far, we have been operating in North America, Central America, Africa & Asia. To learn more, visit",
+    "link": {
+      "title": "Our Projects",
+      "url": "/organization"
+    }
+  },
+  {
+    "id": "item-1",
+    "title": "What humanitarian issues does Mite address?",
+    "description": "We work worldwide, wherever our partner organizations are doing good!",
+    "link": {
+      "title": "Our Projects",
+      "url": "/organization"
+    }
+  },
+  {
+    "id": "item-2",
+    "title": "How do I choose which projects I want to support?",
+    "description": "We work worldwide, wherever our partner organizations are doing good!",
+    "link": {
+      "title": "Our Projects",
+      "url": "/organization"
+    }
+  },
+  {
+    "id": "item-3",
+    "title": "What am I paying for when I donate to a project?",
+    "description": "We work worldwide, wherever our partner organizations are doing good!",
+    "link": {
+      "title": "Our Projects",
+      "url": "/organization"
+    }
+  },
+  {
+    "id": "item-4",
+    "title": "How can I fundraise for Mite?",
+    "description": "We work worldwide, wherever our partner organizations are doing good!",
+    "link": {
+      "title": "Our Projects",
+      "url": "/organization"
+    }
+  }
+]

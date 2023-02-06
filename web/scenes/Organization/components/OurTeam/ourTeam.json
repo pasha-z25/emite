@@ -1,0 +1,52 @@
+[
+  {
+    "image": "images/staff/Milenita_Toal.png",
+    "name": "Milenita Toal",
+    "position": "Project director"
+  },
+  {
+    "image": "images/staff/Madison_Toal.png",
+    "name": "Madison Toal",
+    "position": "Project director"
+  },
+  {
+    "image": "images/staff/Scott_Toal.png",
+    "name": "Scott Toal",
+    "position": "President and Founder"
+  },
+  {
+    "image": "images/staff/Kevin_King.png",
+    "name": "Kevin King",
+    "position": "Chairman"
+  },
+  {
+    "image": "images/staff/Jared_Simmons.png",
+    "name": "Jared Simmons",
+    "position": "Project director"
+  },
+  {
+    "image": "images/staff/some_employee_1.png",
+    "name": "some employee",
+    "position": "employee"
+  },
+  {
+    "image": "images/staff/John_Martin.png",
+    "name": "John Martin",
+    "position": "Board Member"
+  },
+  {
+    "image": "images/staff/Danya_Jordan.png",
+    "name": "Danya Jordan",
+    "position": "Project director"
+  },
+  {
+    "image": "images/staff/some_employee_2.png",
+    "name": "some employee",
+    "position": "employee"
+  },
+  {
+    "image": "images/staff/some_employee_3.png",
+    "name": "some employee",
+    "position": "employee"
+  }
+]

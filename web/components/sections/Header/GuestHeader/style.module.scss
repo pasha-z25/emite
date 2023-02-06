@@ -1,0 +1,208 @@
+@import 'styles/variables';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+    &.fixed {
+      :global {
+        color: red;
+        .mainMenu {
+          display: none;
+        }
+      }
+      position: fixed;
+      &.color-dark {
+        color: $color-darkgray;
+      }
+    }
+ :global {
+   .mainMenu {
+     padding-left: 3.75rem;
+     padding-right: 2em;
+     .menu_link {
+       display: inline-block;
+       padding-bottom: 0.25rem;
+       transition-property: none;
+       transition-duration: 0s;
+       transition-timing-function: unset;
+       &::after {
+         content: '';
+         display: block;
+         position: absolute;
+         width: 0;
+         height: 2px;
+         background-color: $color-red;
+         transition: all 0.2s linear;
+         bottom: 0;
+         left: 50%;
+       }
+       &:hover {
+         opacity: 1;
+         color: $color-red;
+       }
+       &.active {
+         opacity: 1;
+         color: $color-red;
+         &::after {
+           width: 100%;
+           left: 0;
+         }
+       }
+     }
+     &.opacity-hidden {
+       .menu_link {
+         display: none;
+       }
+     }
+     a + a {
+       margin-left: 2.5rem;
+       @media (min-width: $xl) {
+         margin-left: 3.5rem;
+       }
+     }
+   }
+   .btnLogin {
+     margin-right: 2.5rem;
+     &:hover {
+       color: $color-red;
+       opacity: 1;
+     }
+   }
+ }
+}
+
+.mobileHeader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  padding: 2.5 * $basic-space 0.5 * $basic-space;
+  :global {
+    .logo {
+      max-width: 110px;
+      svg {
+        display: block;
+      }
+      @media (min-width: $lg) {
+        max-width: 140px;
+      }
+    }
+    .burger {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      span {
+        position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        left: 2px;
+        background-color: #0A0B11;
+        //border-radius: 50%;
+        transition: all 0.2s linear;
+        opacity: 1;
+        &:first-child {
+          top: 3px;
+        }
+        &:nth-child(2), &:nth-child(3) {
+          top: 11px;
+        }
+        &:last-child {
+          top: 20px;
+        }
+      }
+      &.open {
+        span {
+          &:first-child {
+            top: -3px;
+            opacity: 0;
+          }
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+          }
+          &:last-child {
+            top: 27px;
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .menuBlock {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 80px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding-left: 3 * $basic-space;
+      padding-right: 3 * $basic-space;
+      overflow: auto;
+      .mainMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        text-align: center;
+        .menu_link {
+          color: $color-darkgray;
+          font-weight: 600;
+          padding-top: 2 * $basic-space;
+          padding-bottom: 2 * $basic-space;
+          border-bottom: 1px solid rgba(75, 74, 91, 0.1);
+          &.active {
+            opacity: 1;
+            color: $color-red;
+          }
+        }
+      }
+      .media-icons {
+        .contacts {
+          padding-top: 3 * $basic-space;
+          padding-bottom: $basic-space;
+        }
+        .social {
+          padding-top: $basic-space;
+          padding-bottom: 3 * $basic-space;
+        }
+        .social-item + .social-item {
+          margin-left: 1rem;
+        }
+      }
+      .authorisation {
+        justify-content: center;
+        padding-top: 2 * $basic-space;
+        padding-bottom: 3 * $basic-space;
+        border-top: 1px solid rgba(75, 74, 91, 0.1);
+        a + a {
+          padding-left: 3 * $basic-space;
+          margin-left: 3 * $basic-space;
+          border-left: 1px solid rgba(75, 74, 91, 0.1);
+        }
+      }
+    }
+    .open .menuBlock {
+      display: flex;
+    }
+    .btnGive {
+      position: fixed;
+      right: 3 * $basic-space;
+      bottom: 3 * $basic-space;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: none;
+    }
+  }
+}

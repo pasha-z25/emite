@@ -1,0 +1,92 @@
+@import 'styles/variables';
+
+.wrapper {
+  position: fixed;
+  width: calc(100% - 3rem);
+  left: 1.5rem;
+  bottom: 24px;
+  z-index: 50;
+  font-size: 0.75rem; // 12px
+  @media (min-width: $xl) {
+    font-size: 0.875rem; // 14px
+    max-width: 1000px;
+    left: calc((100vw - 1000px) / 2);
+  }
+  @media (min-width: $lg) {
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 60px rgba(109, 66, 27, 0.2);
+  }
+  @media (max-width: $lg) {
+    flex-direction: column;
+  }
+  :global {
+    .cookie-icon,
+    .cookie-text,
+    .cookie-button {
+      //color: $color-white;
+      background-color: rgba(255, 255, 255, 0.75);
+      //box-shadow: 0 2px 60px rgba(109, 66, 27, 0.2);
+    }
+    .cookie-icon {
+      padding-top: 1rem;
+    }
+    .cookie-text {
+      padding: 1rem;
+    }
+    @media (min-width: $lg) {
+      .cookie-icon,
+      .cookie-button {
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+      .cookie-icon {
+        border-radius: 20px 0 0 20px;
+      }
+      .cookie-text {
+        padding: 1.5rem 0;
+      }
+      .cookie-button {
+        border-radius: 0 20px 20px 0;
+      }
+    }
+    @media (max-width: $lg) {
+      #curved-corner-TopLeft {
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
+      }
+      #curved-corner-TopLeft:before {
+        content: "";
+        display: block;
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        border-radius: 50%;
+      }
+      #curved-corner-TopLeft:before {
+        top: 0;
+        left: 0;
+        box-shadow: -32px -32px 0 0 rgba(255, 255, 255, 0.75);
+      }
+      .cookie-icon {
+        border-radius: 20px 20px 0 0;
+      }
+      .cookie-text {
+        border-radius: 0 0 20px 0;
+      }
+      .cookie-button {
+        height: 64px;
+        max-width: calc(100% - 64px);
+        border-radius: 0 0 20px 20px;
+        button {
+          position: relative;
+          left: 32px;
+        }
+      }
+    }
+  }
+}

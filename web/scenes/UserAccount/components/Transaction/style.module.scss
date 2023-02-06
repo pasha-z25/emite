@@ -1,0 +1,121 @@
+@import 'styles/variables';
+
+.wrapper {
+  :global {
+    /*
+    table {
+      border-collapse: collapse;
+      .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid rgba(75, 74, 91, 0.2);
+        &:hover {
+          svg path {
+            transition: all 0.2s linear;
+            fill: $color-red;
+          }
+        }
+      }
+    }
+    th, td {
+      padding: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    thead th, tfoot td {
+      background-color: #F2EFEC;
+    }
+    thead th:first-child, tfoot td:first-child {
+      border-radius: 1rem 0 0 1rem;
+    }
+    thead th:last-child, tfoot td:last-child {
+      border-radius: 0 1rem 1rem 0;
+    }
+    tbody td:nth-child(2) {
+      font-weight: bold;
+    }
+    tbody td:nth-child(3) {
+      div {
+        max-width: 200px;
+      }
+    }
+    tbody td:nth-child(5) {
+      color: $color-red;
+      text-align: right;
+    }
+    tbody td:last-child {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    */
+    .grid-wrapper {
+      display: grid;
+      grid-template-columns: 14% 16% 39% 13% 11% 7%;
+      @media (min-width: $xxl) {
+        grid-template-columns: 12.5% 16% 41% 13% 11% 6.5%;
+      }
+      @media (min-width: $fhd) {
+        grid-template-columns: 12% 13% 50% 10% 10% 5%;
+      }
+      &.head, &.foot {
+        background-color: #F2EFEC;
+      }
+      &.foot {
+        grid-template-columns: 30% 70%;
+      }
+      .grid-cell {
+        padding: 0.5rem 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: auto;
+        margin-bottom: auto;
+        &.data:nth-child(2), &.data:nth-child(5) {
+          font-weight: bold;
+        }
+        &:nth-child(5) {
+          text-align: right;
+          &.data {
+            color: $color-red;
+          }
+        }
+        &.foot:last-child {
+          text-align: right;
+        }
+        .icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid rgba(75, 74, 91, 0.2);
+          &:hover {
+            svg path {
+              transition: all 0.2s linear;
+              fill: $color-red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.loading {
+  line-height: 0.5;
+  animation: loading 0.5s linear infinite;
+  transition: all 0.2s linear;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}

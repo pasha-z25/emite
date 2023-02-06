@@ -1,0 +1,31 @@
+@import 'styles/variables';
+
+.wrapper {
+
+  :global {
+    .miteLogo {
+      display: none;
+    }
+    .popupWindow {
+      max-width: 70%;
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+    .footer-block {
+      border-top: 1px solid rgba(75, 74, 91, 0.2);
+      .completion {
+        display: inline-block;
+        border-left: 1px solid rgba(75, 74, 91, 0.2);
+      }
+    }
+    .scroll-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .content-wrapper {
+      flex: 1;
+      overflow: auto;
+      max-height: 250px;
+    }
+  }
+}

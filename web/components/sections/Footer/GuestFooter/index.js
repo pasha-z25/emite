@@ -1,0 +1,1 @@
+export { GuestFooter } from './Footer'

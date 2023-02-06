@@ -1,0 +1,58 @@
+@import 'styles/variables';
+
+.formWrapper {
+  &::before {
+    top: 1rem;
+    right: 4rem;
+    width: 13px;
+    height: 12px;
+    background: url('/icons/heart.svg') no-repeat center/cover;
+    @media (min-width: $lg) {
+      top: 2rem;
+      right: 0;
+      width: 22px;
+      height: 21px;
+    }
+  }
+  :global {
+    .title {
+      &::before {
+        top: -2rem;
+        right: 6rem;
+        width: 4px;
+        height: 4px;
+        @media (min-width: $lg) {
+          width: 6px;
+          height: 6px;
+        }
+      }
+      &::after {
+        top: 1.5rem;
+        right: 3rem;
+        width: 4px;
+        height: 4px;
+        @media (min-width: $lg) {
+          top: 2rem;
+          right: 0;
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+    .prev-link {
+      position: relative;
+      padding-left: 1.5rem;
+      .svg-wrap {
+        position: absolute;
+        top: 0.4rem;
+        left: 0.25rem;
+        transition: all 0.2s linear;
+      }
+      &:hover {
+        .svg-wrap {
+          left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,222 @@
+@import 'styles/variables';
+
+.imagesWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $basic-space;
+  @media (max-width: $md) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  :global {
+    .block-radius {
+      border-radius: 0.5rem;
+      @media (min-width: $lg) {
+        border-radius: 1rem;
+      }
+      @media (min-width: $xl) {
+        border-radius: 1.25rem;
+      }
+      .play-icon {
+        position: absolute;
+        z-index: 1;
+        top: 0.5rem;
+        right: 0.5rem;
+        @media (min-width: $xl) {
+          top: 1rem;
+          right: 1rem;
+        }
+      }
+      .notAbsolute img {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+.sliderWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @supports (backdrop-filter: blur(40px)) {
+    background-color: rgba(75, 74, 91, 0.8);
+    backdrop-filter: blur(40px);
+  }
+  @supports not (backdrop-filter: blur(40px)) {
+    background-color: rgba(75, 74, 91, 0.9);
+  }
+  :global {
+    .close {
+      top: 2rem;
+      right: 2rem;
+    }
+    .image-radius {
+      border-radius: 0.5rem;
+      @media (min-width: $lg) {
+        border-radius: 1rem;
+      }
+      @media (min-width: $xl) {
+        border-radius: 1.25rem;
+      }
+    }
+    .swiper-wrapper {
+      align-items: center;
+    }
+    .swiper-container {
+      max-width: 600px;
+      .notAbsolute img {
+        width: 100% !important;
+      }
+      .swiper-slide {
+        position: relative;
+        padding-bottom: 1rem;
+        .image-slide-item {
+          border-radius: 0.5rem;
+          @media (min-width: $lg) {
+            border-radius: 1rem;
+          }
+          @media (min-width: $xl) {
+            border-radius: 1.25rem;
+          }
+        }
+        .video-wrapper {
+          video {
+            display: block;
+          }
+        }
+        .youtube-wrapper {
+          position: relative;
+          &::before {
+            content: '';
+            display: block;
+            padding-top: 56.4%;
+          }
+          iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+        .action-group {
+          box-sizing: border-box;
+          height: 40px;
+          background-color: rgba(255, 255, 255, 0.2);
+          min-width: 8rem;
+          padding: $basic-space $basic-space * 1.5;
+        }
+        .shared-wrapper {
+          max-width: 90%;
+          position: relative;
+          margin-left: auto;
+          margin-right: auto;
+          .shared-window {
+            position: relative;
+            background-color: $color-bgLight;
+            padding: $basic-space * 9;
+            border-radius: 0.5rem;
+            @media (min-width: $lg) {
+              border-radius: 1rem;
+            }
+            @media (min-width: $xl) {
+              border-radius: 1.25rem;
+            }
+            .btn-back {
+              position: absolute;
+              top: 1.5rem;
+              left: 1.5rem;
+            }
+            .btn-copy {
+              width: 110px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 20px;
+              color: $color-red;
+              background-color: rgba(249, 65, 68, 0.1);
+              &:hover {
+                background-color: rgba(249, 65, 68, 0.2);
+              }
+            }
+            .react-share__ShareButton {
+              .social-icon {
+                width: 64px;
+                height: 64px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+                transition: all 0.2s linear;
+              }
+              &[aria-label="facebook"] {
+                .social-icon {
+                  background: rgba(59, 89, 152, 0.1);
+                  &:hover {
+                    background: rgba(59, 89, 152, 0.2);
+                  }
+                }
+              }
+              &[aria-label="linkedin"] {
+                .social-icon {
+                  background: rgba(0, 119, 181, 0.1);
+                  &:hover {
+                    background: rgba(0, 119, 181, 0.2);
+                  }
+                }
+              }
+              &[aria-label="twitter"] {
+                .social-icon {
+                  background: rgba(85, 172, 238, 0.1);
+                  &:hover {
+                    background: rgba(85, 172, 238, 0.2);
+                  }
+                }
+              }
+            }
+            .input {
+              background-color: transparent;
+              font: inherit;
+              border: none;
+              border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+            }
+          }
+        }
+        a.like-red {
+          svg {
+            path {
+              stroke: #F94144;
+              fill: #F94144;
+            }
+          }
+        }
+      }
+    }
+    .swiper-navigation {
+      position: absolute;
+      top: calc(50% - 24px);
+      width: calc(100% + 100px + 2rem);
+      left: calc(-50px - 1rem);
+      .swiper-button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid $color-bgLight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: all 0.2s linear;
+        &:not(.swiper-button-disabled):hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

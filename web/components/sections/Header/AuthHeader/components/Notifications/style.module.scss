@@ -1,0 +1,63 @@
+@import 'styles/variables';
+
+.wrapper {
+  :global {
+    .bell-icon {
+      cursor: pointer;
+    }
+    .list-wrapper {
+      max-height: 80vh;
+      overflow: hidden;
+      top: calc(100% - 10px);
+      width: 100vw;
+      left: calc(-12rem + 12px);
+      max-width: 24rem;
+      z-index: 10;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -6px;
+        left: calc(50% - 6px);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid $color-white;
+      }
+
+      ul{
+        max-height: calc(80vh - 62px);
+        overflow: scroll
+      }
+    }
+
+    .list-item{
+      border-bottom:1px solid rgba(75, 74, 91, 0.15);
+      position: relative;
+
+      &:hover{
+        background: rgba(249, 65, 68, 0.05);
+        transition: 0.3s;
+
+        .list-item-title{
+          color:#F94144
+        }
+      }
+
+      .list-item-title{
+        width: 100%;
+      }
+
+      .list-circle{
+          width: 6px;
+          height: 6px;
+          background: #F94144;
+          border-radius: 50%;
+          position: absolute;
+          left: 33px;
+          top:26px
+        }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Choose a support category",
+    "value": "choose"
+  },
+  {
+    "title": "Refer a project",
+    "value": "refer"
+  },
+  {
+    "title": "Partner with Us",
+    "value": "partner"
+  },
+  {
+    "title": "Host a Project Drop Party",
+    "value": "hostParty"
+  },
+  {
+    "title": "Sponsor a Project",
+    "value": "sponsor"
+  },
+  {
+    "title": "Start a Fundraiser",
+    "value": "fundraiser"
+  },
+  {
+    "title": "Donations",
+    "value": "donations"
+  },
+  {
+    "title": "Account Support",
+    "value": "support"
+  },
+  {
+    "title": "Request Information",
+    "value": "information"
+  },
+  {
+    "title": "Other...",
+    "value": "other"
+  }
+]

@@ -1,0 +1,231 @@
+@import 'styles/variables';
+
+.wrapper {
+  :global {
+    .text-wrapper {
+      width: 100%;
+      @media (min-width: $xl) {
+        max-width: 54.5%;
+      }
+      .main-title {
+        @media (min-width: $xl) {
+          padding-right: 2rem;
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.5em;
+          right: 0;
+          width: 25px;
+          height: 24px;
+          background: url('/icons/heart.svg') no-repeat center/cover;
+        }
+        .color-red {
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -0.5em;
+            right: 1em;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, rgba(9, 178, 132, 0.6) 25%, rgba(9, 178, 132, 0) 93.75%);
+          }
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0.7em;
+            right: -0.75em;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, rgba(252, 198, 105, 0.6) 25%, rgba(252, 198, 105, 0) 93.75%);
+          }
+        }
+      }
+      .dropdown-wrapper {
+        margin-bottom: 2rem;
+        @media (min-width: $xl) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    .list-wrapper {
+      width: 100%;
+      @media (min-width: $xl) {
+        margin-left: 1rem;
+        max-width:37%;
+      }
+    }
+    .form-wrapper {
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 5rem;
+        bottom: 3rem;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(135deg, rgba(9, 178, 132, 0.6) 25%, rgba(9, 178, 132, 0) 93.75%);
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 1.5rem;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(135deg, rgba(252, 198, 105, 0.6) 25%, rgba(252, 198, 105, 0) 93.75%);
+      }
+      .label {
+        //display: inline-block;
+        //position: relative;
+        //width: 100%;
+        //margin-bottom: 3rem;
+
+        //&.w50 {
+        //  width: calc(50% - 1rem);
+        //}
+        //textarea {
+        //  resize: none;
+        //  height: 55px;
+        //  overflow: auto;
+        //}
+        //input, textarea {
+        //  width: 100%;
+        //  font: inherit;
+        //  color: inherit;
+        //  border-left: none;
+        //  border-top: none;
+        //  border-right: none;
+        //  transition: all 0.2s linear;
+        //  background-color: transparent;
+        //  padding-top: 0.5rem;
+        //  padding-bottom: 1rem;
+        //  border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+        //
+        //  &:focus {
+        //    border-bottom-color: rgba(75, 74, 91, 0.8);
+        //  }
+        //  &::placeholder {
+        //    opacity: 0.7;
+        //  }
+        //}
+        &.icon {
+          &::before {
+            position: absolute;
+            top: 0.65rem;
+            left: 0;
+          }
+          input {
+            padding-left: 2rem;
+          }
+        }
+        &.location {
+          &::before {
+            content: url('/icons/place_gray.svg');
+          }
+        }
+        &.donation {
+          &::before {
+            content: url('/icons/dollar.svg');
+          }
+        }
+        //.errors {
+        //  top: 100%;
+        //  left: 0;
+        //}
+      }
+      //.w50 + .w50 {
+      //  margin-left: 2rem;
+      //}
+    }
+  }
+}
+
+.faqList {
+  :global {
+    .content {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      &::before {
+        content: url('/icons/question-ask.svg');
+        position: absolute;
+        top: 0.25rem;
+        left: 0;
+      }
+      .close {
+        position: absolute;
+        top: 0.25rem;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.5rem;
+          left: 0;
+          width: 16px;
+          height: 2px;
+          background-color: #4B4A5B;
+          transition: all 0.2s linear;
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.5rem;
+          left: 0;
+          width: 16px;
+          height: 2px;
+          background-color: #4B4A5B;
+          transform: rotate(90deg);
+          transition: all 0.2s linear;
+        }
+      }
+      .title {
+        &:hover {
+          p {
+            color: $color-red;
+          }
+          .close {
+            &::before, &::after {
+              background-color: $color-red;
+            }
+          }
+        }
+      }
+    }
+    .description, .faq-link {
+      padding-top: 0;
+      padding-bottom: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.2s linear;
+    }
+    .active {
+      .description {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+      }
+      .description, .faq-link {
+        max-height: 50vh;
+      }
+      .close {
+        &::after {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}

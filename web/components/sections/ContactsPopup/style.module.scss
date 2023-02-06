@@ -1,0 +1,61 @@
+@import 'styles/variables';
+
+.wrapper {
+  max-width: 19.5rem;
+  &::before {
+    left: 0;
+    bottom: 0;
+    width: 6px;
+    height: 6px;
+    @media (min-width: $lg) {
+      left: -4rem;
+    }
+  }
+  &::after {
+    right: 0;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    @media (min-width: $lg) {
+      right: -4rem;
+    }
+  }
+  :global {
+    .title {
+      &::before {
+        top: 2rem;
+        left: 1rem;
+        width: 6px;
+        height: 6px;
+        @media (min-width: $lg) {
+          top: 1rem;
+          left: -3rem;
+        }
+      }
+      &::after {
+        top: 3rem;
+        right: 1rem;
+        width: 20px;
+        height: 19px;
+        background: url('/icons/heart.svg') no-repeat center/cover;
+        @media (min-width: $lg) {
+          top: -1rem;
+          right: -3rem;
+        }
+      }
+    }
+    hr {
+      border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+      border-top: none;
+    }
+    @media (max-width: $lg) {
+      .phone-line, .address-line {
+        flex-direction: column;
+        align-items: center;
+        .color-darkgray {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

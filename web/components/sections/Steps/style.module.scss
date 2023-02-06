@@ -1,0 +1,286 @@
+@import 'styles/variables';
+
+.charitySteps {
+  flex-direction: column;
+
+  @media (min-width: $xl) {
+    flex-direction: row;
+  }
+  :global {
+    .images-wrapper {
+      width: 100%;
+      @media (min-width: $xl) {
+        width: 65%;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 65%;
+      }
+      //@supports (aspect-ratio: 16/9) {
+      //  padding-top: initial;
+      //  aspect-ratio: 16/9;
+      //}
+      .image-item {
+        top: 50%;
+        right: 50%;
+        width: 0;
+        opacity: 0;
+        z-index: 0;
+        padding-top: 65%;
+        //@supports (aspect-ratio: 16/9) {
+        //  padding-top: initial;
+        //  aspect-ratio: 16/9;
+        //}
+        &.show {
+          top: 0;
+          right: 0;
+          width: 100%;
+          opacity: 1;
+          z-index: 1;
+        }
+      }
+    }
+    .steps-list {
+      margin-left: 2%;
+      width: 28%;
+      list-style: none;
+
+      .step-item {
+        min-height: 4rem;
+        .content_block {
+          padding-left: 1.5rem;
+        }
+        .name {
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+          cursor: pointer;
+        }
+        .description {
+          font-size: 14px;
+          max-height: 0;
+          overflow: hidden;
+          padding-bottom: 0;
+        }
+        .line {
+          height: 100%;
+          //transition: all 3s linear;
+          transform: translateY(1rem);
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            //transition: all 3s linear;
+            width: 1px;
+            height: 0;
+            background-color: #F94144;
+            z-index: 1;
+
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 100%;
+            border-right: 1px dashed lightgray;
+          }
+          .circle {
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: -4px;
+              left: -4px;
+              width: 9px;
+              height: 9px;
+              border-radius: 50%;
+              z-index: 1;
+              background-color: lightgray;
+              transition: all 0.2s linear;
+            }
+          }
+        }
+        &.colored {
+          .line {
+            color: #F94144;
+            &::before {
+              height: 100%;
+              transition: all 7s linear;
+            }
+          }
+          .circle {
+            &::before {
+              background-color: #F94144;
+            }
+          }
+        }
+        &.inProgress {
+          .name {
+            color: #F94144;
+          }
+          .description {
+            max-height: 150px;
+            padding-bottom: 1.5rem;
+          }
+          .circle {
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: -7px;
+              left: -7px;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              opacity: 0.3;
+              background-color: #F94144;
+              transition: all 0.2s linear;
+              animation: pulsar 1.5s linear infinite;
+            }
+          }
+        }
+        &.finish {
+          .description {
+            max-height: 150px;
+            padding-bottom: 1.5rem;
+          }
+        }
+        &:hover {
+          .line {
+            .circle {
+              &::before {
+                background-color: rgba(249, 65, 68, 0.4);
+              }
+            }
+          }
+        }
+      }
+      .btn {
+        margin-top: 2rem;
+      }
+      .step-item:last-of-type {
+        .line {
+          //height: calc(100% - 1.5rem);
+          height: 0 !important;
+        }
+      }
+      + .btn {
+        display: none;
+      }
+    }
+    @media (max-width: $xl) {
+      .horizontal-container {
+        max-width: 100vw;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        padding-top: $basic-space;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .wrap {
+          max-width: 82%;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .steps-list {
+        display: flex;
+        margin-left: 0;
+        width: 100%;
+        .step-item {
+          width: 70vw;
+          //flex-grow: 0;
+          flex-shrink: 0;
+          padding-right: 1rem;
+          padding-bottom: 1rem;
+          .description {
+            max-height:  150px;
+          }
+          .content_block {
+            padding-top: 1.5rem;
+            padding-left: 0;
+          }
+          .line {
+            height: 0;
+            width: 100%;
+            //transform: translateY(1rem);
+            //transform: translateX(1rem);
+            transform: none;
+            &::before {
+              //width: 1px;
+              width: 0;
+              //height: 0;
+              height: 1px;
+            }
+            &::after {
+              //height: 100%;
+              width: 100%;
+              //border-right: 1px dashed lightgray;
+              border-top: 1px dashed lightgray;
+              height: 0;
+              border-right: none;
+            }
+          }
+          &.colored {
+            .line {
+              &::before {
+                height: 1px;
+                width: 100%;
+              }
+            }
+          }
+          &.inProgress {
+            .description {
+              max-height: 150px;
+              @media (min-width: $xl) {
+                padding-bottom: 1.5rem;
+              }
+            }
+          }
+          &.finish {
+            .description {
+              max-height: 100px;
+            }
+          }
+          &:last-child {
+            .line {
+              &::before, &::after {
+                display: none;
+              }
+            }
+          }
+        }
+        .btn {
+          display: none;
+        }
+        + .btn {
+          display: block;
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: calc(22vw - 1rem);
+          flex-shrink: 0;
+        }
+      }
+    }
+    @media (max-width: $md) {
+      .horizontal-container {
+        .wrap {
+          max-width: 100%;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+      .steps-list {
+        &::after {
+          width: calc(30vw - 1.5rem);
+        }
+      }
+    }
+  }
+}

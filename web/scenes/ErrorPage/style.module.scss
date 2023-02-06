@@ -1,0 +1,113 @@
+@import 'styles/variables';
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(178.67deg, rgba(192, 215, 241, 0) 12.13%, rgba(194, 219, 242, 0.41) 28.4%, #CAF3F9 75.82%);
+  @media (min-width: $lg) {
+    background: linear-gradient(186.67deg, rgba(192, 215, 241, 0) 12.13%, rgba(194, 219, 242, 0.41) 28.4%, #CAF3F9 91.82%);
+  }
+  :global {
+    .container {
+      &::before {
+        top: 12%;
+        left: 1.2rem;
+        width: 30px;
+        height: 15px;
+        background: url('/icons/cloudGroup.svg') no-repeat center/cover;
+        @media (min-width: $lg) {
+          top: 40%;
+          width: 130px;
+          height: 77px;
+        }
+      }
+      &::after {
+        right: 1.5rem;
+        bottom: 30%;
+        width: 30px;
+        height: 15px;
+        background: url('/icons/cloudBig.svg') no-repeat center/cover;
+        @media (min-width: $lg) {
+          width: 120px;
+          height: 63px;
+        }
+      }
+    }
+    .big404 {
+      &::before {
+        content: "404";
+        font-size: 5em;
+        font-weight: 900;
+        white-space: nowrap;
+        background: linear-gradient(199.89deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0.6) 49.58%, rgba(255, 255, 255, 0) 86.72%) center/100% no-repeat;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        position: absolute;
+        left: 0.5rem;
+        top: -0.6em;
+        z-index: -1;
+        @media (min-width: $lg) {
+          font-size: 6em;
+          left: -2rem;
+        }
+      }
+    }
+    .title {
+      &::before {
+        top: -4em;
+        left: 3em;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $lg) {
+          top: -2.5em;
+          left: -4.5em;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      &::after {
+        top: -3em;
+        right: 0;
+        width: 12px;
+        height: 11px;
+        background: url('/icons/heartWhite.svg') no-repeat center/cover;
+        transform: rotate(65deg);
+        @media (min-width: $lg) {
+          right: -15rem;
+          width: 33px;
+          height: 32px;
+        }
+      }
+    }
+    .description {
+      max-width: 23rem;
+      &::before {
+        bottom: -7rem;
+        left: 1rem;
+        width: 18px;
+        height: 16px;
+        background: url('/icons/heartWhite.svg') no-repeat center/cover;
+        @media (min-width: $lg) {
+          bottom: -4rem;
+          left: -8rem;
+          width: 30px;
+          height: 29px;
+        }
+      }
+      &::after {
+        right: 4rem;
+        bottom: -8rem;
+        width: 10px;
+        height: 10px;
+        @media (min-width: $lg) {
+          right: -11rem;
+          bottom: -2rem;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}

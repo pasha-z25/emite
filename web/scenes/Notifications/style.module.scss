@@ -1,0 +1,18 @@
+@import 'styles/variables';
+
+.wrapper {
+  :global {
+    .shareGroup-wrapper {
+      display: none;
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      z-index: 1;
+      background-color: $color-bgLight;
+      box-shadow: 0 0 30px $color-bgLight;
+    }
+    .active > .shareGroup-wrapper {
+      display: flex;
+    }
+  }
+}

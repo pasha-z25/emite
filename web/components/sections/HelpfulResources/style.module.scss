@@ -1,0 +1,89 @@
+@import 'styles/variables';
+
+.title {
+  &::before {
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 6px;
+
+    @media (min-width: $xl) {
+      //top: initial;
+      right: initial;
+      top: 0.5rem;
+      left: 15%;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &::after {
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    height: 8px;
+    @media (min-width: $xl) {
+      top: 1rem;
+      right: 15%;
+      left: initial;
+      bottom: initial;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  :global {
+    @media (min-width: $lg) {
+      .color-red {
+        &::before {
+          left: 1rem;
+          bottom: 0;
+          width: 10px;
+          height: 10px;
+        }
+        &::after {
+          top: -0.5rem;
+          right: 1rem;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+.swiperWrapper {
+  position: relative;
+   :global {
+     .resource-item {
+       border-radius: 1.25rem;
+       width: 100%;
+       //overflow: initial;
+       &::after {
+         content: '';
+         display: block;
+         position: absolute;
+         bottom: 0;
+         right: 0;
+         top: 0;
+         left: 0;
+         background: linear-gradient(180deg, rgba(37, 23, 8, 0) 0.7%, rgba(37, 23, 8, 0.6) 76.52%, rgba(37, 23, 8, 0.8) 100%);
+       }
+       .info-wrapper {
+         padding-left: 2rem;
+         padding-right: 2rem;
+         bottom: -6.5rem;
+       }
+       &:hover {
+         .info-wrapper {
+           bottom: 1.5rem;
+         }
+       }
+     }
+     .swiper-container {
+       width: 100%;
+       padding-bottom: 3rem;
+       @media (min-width: $xl) {
+         padding-bottom: 0;
+       }
+     }
+   }
+}

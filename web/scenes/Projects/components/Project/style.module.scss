@@ -1,0 +1,135 @@
+@import 'styles/variables';
+
+.projectStyles {
+  :global {
+    .project-title {
+      font-size: 2.25rem;
+    }
+    .project-info {
+      border-top: 1px solid rgba(75, 74, 91, 0.2);
+      border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+      @media (max-width: $lg) {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      .info-item {
+        width: 100%;
+        max-width: 50%;
+        margin-bottom: 2.5rem;
+        @media (min-width: $lg) {
+          max-width: calc(25% - 2.5rem);
+          margin-bottom: 0;
+          &:last-child {
+            max-width: 25%;
+          }
+          + .info-item {
+            margin-left: 2.5rem;
+            padding-left: 2.5rem;
+            border-left: 1px solid rgba(75, 74, 91, 0.2);
+          }
+        }
+      }
+      .partner-item {
+        .svg-wrap {
+          svg {
+            path {
+              fill: #F94144;
+            }
+          }
+        }
+      }
+      .category-item {
+        .svg-wrap {
+          svg {
+            path {
+              fill: #37C2EE;
+            }
+          }
+        }
+      }
+      .location-item {
+        .svg-wrap {
+          svg {
+            path {
+              fill: #12AF85;
+            }
+          }
+        }
+      }
+    }
+    .tabs-wrapper {
+      @media (max-width: $lg) {
+        position: relative;
+        width: calc(100% + 3rem);
+        left: -1.5rem;
+      }
+    }
+    .tab-btn {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      min-height: 40px;
+      min-width: max-content;
+      border-width: 3px;
+      &.active {
+        background-color: $color-darkgray;
+        color: $color-white;
+        svg {
+          path {
+            fill: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.listProject {
+  @media (min-width: $xl) {
+    padding-left: 5 * $basic-space;
+  }
+  :global {
+    .first-content {
+      @media (min-width: $lg) {
+        flex-wrap: nowrap;
+      }
+    }
+    .main-image-wrapper {
+      @media (min-width: $lg) {
+        min-width: 42%;
+        max-width: 42%;
+      }
+    }
+    .text-wrapper {
+      @media (min-width: $xl) {
+        padding-left: 5 * $basic-space;
+      }
+      .description {
+        //max-height: 9.5rem;
+      }
+    }
+  }
+}
+
+.globeProject {
+  :global {
+    .first-content {
+      @media (max-width: $lg) {
+        flex-direction: column-reverse;
+      }
+      @media (min-width: $lg) {
+        flex-wrap: nowrap;
+        .text-wrapper, .globe-wrapper {
+          max-width: 50%;
+        }
+        .globe-wrapper {
+          min-height: 30vw;
+        }
+      }
+    }
+    @media (max-width: $lg) {
+      [class*="imagesWrapper"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+  }
+}

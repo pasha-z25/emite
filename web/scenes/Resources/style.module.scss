@@ -1,0 +1,246 @@
+@import 'styles/variables';
+
+.wrapper {
+  padding-top: 10.5rem;
+  @media (max-width: $xl) {
+    flex-wrap: wrap;
+  }
+  :global {
+    .sticky-wrapper {
+      @media (min-width: $lg) {
+        position: sticky;
+        top: 100px;
+      }
+    }
+    .category-navigation {
+      width: 100%;
+      @media (min-width: $xl) {
+        max-width: 15rem;
+      }
+      .form-imitation {
+        label {
+          border-bottom: 1px solid rgba(75, 74, 91, 0.2);
+          padding-bottom: 0.5rem;
+        }
+        input {
+          font: inherit;
+          color: inherit;
+          background-color: transparent;
+          border: none;
+          position: relative;
+          z-index: 5;
+        }
+      }
+      @media (max-width: $xl) {
+        .menu_wrapper {
+          position: absolute;
+          top: -1.5rem;
+          left: 0;
+          width: 100%;
+          border-radius: 8px;
+          padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+          z-index: 2;
+          .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            //margin-left: auto;
+            position: absolute;
+            top: 1.5rem;
+            right: 0.5rem;
+            z-index: 1;
+            span {
+              transition: all 0.2s linear;
+              display: block;
+              position: relative;
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: $color-black;
+            }
+            span + span {
+              margin-top: 3px;
+            }
+          }
+          .category-list {
+            overflow: hidden;
+            max-height: 0;
+          }
+          &.open {
+            z-index: 7;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 60px rgba(109, 66, 27, 0.06);
+            .button {
+              span:nth-child(1) {
+                width: 16px;
+                height: 2px;
+                transform: rotate(45deg);
+                top: 6px;
+              }
+              span:nth-child(2) {
+                opacity: 0;
+              }
+              span:nth-child(3) {
+                width: 16px;
+                height: 2px;
+                transform: rotate(-45deg);
+                bottom: 6px;
+              }
+            }
+            .category-list {
+              overflow: auto;
+              max-height: 100vh;
+            }
+          }
+        }
+      }
+    }
+    .article-content {
+      .feedback-question {
+        .button {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          min-width: 6rem;
+          min-height: 3rem;
+          border-radius: 3rem;
+          border: none;
+          @media (min-width: $lg) {
+            min-width: 4.5rem;
+          }
+          &.green {
+            background-color: rgba(9, 178, 132, 0.15);
+            color: $color-green;
+            transition: all 0.2s linear;
+            &:hover {
+              background-color: rgba(9, 178, 132, 1);
+              color: $color-white;
+            }
+          }
+          &.red {
+            background-color: rgba(249, 65, 68, 0.15);
+            color: $color-red;
+            transition: all 0.2s linear;
+            &:hover {
+              background-color: rgba(249, 65, 68, 1);
+              color: $color-white;
+            }
+          }
+        }
+        .button + .button {
+          margin-left: 0.5rem;
+        }
+      }
+      .feedback-question {
+        text-align: center;
+        justify-content: center;
+        span.flex {
+          margin-top: 2rem;
+          @media (min-width: $sm) {
+            padding-right: 2rem;
+          }
+        }
+      }
+      @media (max-width: $xl) {
+        order: 1;
+      }
+      @media (min-width: $xl) {
+        margin-left: 2rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        border-left: 1px solid rgba(75, 74, 91, 0.2);
+      }
+    }
+    .page-navigation {
+      width: 100%;
+      @media (min-width: $xl) {
+        max-width: 17rem;
+      }
+    }
+    .drop-down-list {
+      transition: all 0.2s linear;
+      .title {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        opacity: 0.8;
+        transition: all 0.2s linear;
+        padding-bottom: 0;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url('/icons/chevron-right.svg') no-repeat center/cover;
+          margin-right: 0.5rem;
+          transition: all 0.2s linear;
+        }
+      }
+      li {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+        transition: all 0.2s linear;
+        padding-left: 1rem;
+        opacity: 0.5;
+        padding-bottom: 0;
+
+        a {
+          position: relative;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding-left: 1rem;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 6px;
+            min-width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $color-darkgray;
+            margin-right: 0.5rem;
+            transition: all 0.2s linear;
+          }
+          &.color-red {
+            &::before {
+              background-color: $color-red;
+            }
+          }
+        }
+        &.color-red {
+          a {
+            &::before {
+              background-color: $color-red;
+            }
+          }
+        }
+      }
+      &.open {
+        .title {
+          opacity: 1;
+          padding-bottom: 1rem;
+          &::before {
+            transform: rotate(90deg);
+          }
+        }
+        li {
+          max-height: 3rem;
+          opacity: 1;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import 'styles/variables';
+
+.wrapper {
+  max-width: 17rem;
+  :global {
+    .list-wrap {
+      position: sticky;
+      top: 50px;
+    }
+  }
+}
+.form {
+  :global {
+    label {
+      display: inline-block;
+    }
+    .input {
+      height: 48px;
+      background: #F2EFEC;
+      border-radius: 8px;
+      font: inherit;
+      border: none;
+      padding-left: 1rem;
+      + .reset {
+        position: absolute;
+        z-index: 1;
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 1.5em;
+        line-height: 1;
+        opacity: 0;
+        color: $color-darkgray;
+      }
+      &:not(:placeholder-shown) {
+        + .reset {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.listWrapper {
+  overflow-y: auto;
+  max-height: 300px;
+
+  /* for Firefox */
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: rgba(75, 74, 91, 0.3) rgba(75, 74, 91, 0.1); /* scroll thumb and track */
+
+  /* for Chrome, Edge and Safari */
+  &::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(75, 74, 91, 0.1); /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(75, 74, 91, 0.3); /* color of the scroll thumb */
+    border-radius: 2px; /* roundness of the scroll thumb */
+    border: 1px solid rgba(75, 74, 91, 0.1); /* creates padding around scroll thumb */
+  }
+}
+.list {
+  :global {
+    .item {
+      line-height: 1.4;
+      padding-left: 1.5rem;
+      .link {
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.35rem;
+          left: -1rem;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: transparent;
+          transition: all 0.2s linear;
+        }
+        &.active {
+          &::before {
+            background-color: $color-red;
+          }
+        }
+      }
+
+    }
+  }
+}

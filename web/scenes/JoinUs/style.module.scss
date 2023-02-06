@@ -1,0 +1,330 @@
+@import 'styles/variables';
+
+.mainBanner {
+  background: linear-gradient(197.49deg, #B3E3FF 15.6%, #CAF3F9 87.16%), linear-gradient(186.67deg, rgba(192, 215, 241, 0) 12.13%, rgba(194, 219, 242, 0.41) 28.4%, #CAF3F9 91.82%);
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('/icons/cloudGroup.svg'), url('/icons/cloudBig.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 15% 60%, 85% 40%;
+    background-size: auto, auto;
+  }
+  :global {
+    .title {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(199.89deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0) 86.72%);
+        @media (min-width:$xl) {
+          left: -4rem;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -2rem;
+        width: 30px;
+        height: 30px;
+        transform: rotate(45deg);
+        background: url('/icons/heartWhite.svg') no-repeat center/cover;
+        @media (min-width:$xl) {
+          right: -1rem;
+        }
+      }
+    }
+    .description {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 3rem;
+        bottom: -7rem;
+        width: 40px;
+        height: 40px;
+        background: url('/icons/heartWhite.svg') no-repeat center/cover;
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 3rem;
+        bottom: -5rem;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(199.89deg, #FFFFFF 12.38%, rgba(255, 255, 255, 0) 86.72%);
+      }
+    }
+    .fake-form {
+      max-width: 32.5rem;
+      .label {
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: 0 2px 60px rgba(109, 66, 27, 0.06);
+        margin-bottom: 0;
+        .input {
+          background-color: $color-white;
+          border-bottom-color: transparent;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 2rem;
+          min-height: 3.5rem;
+        }
+        @media (min-width:$xl) {
+          .input {
+            min-height: 4rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+      .btnSignupBig, .btnSignupSmall {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+      .btnSignupSmall {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.joinMighty {
+  :global {
+    .container {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 70%;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(252, 198, 105, 0.6) 25%, rgba(252, 198, 105, 0) 93.75%);
+        @media (min-width:$xl) {
+          right: -1rem;
+        }
+      }
+    }
+    .wrapper {
+      @media (min-width: $lg) {
+        max-width: 32rem;
+        padding-right: 2rem;
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 20px;
+        height: 19px;
+        background: url('/icons/heart.svg') no-repeat center/cover;
+        @media (min-width:$xl) {
+          top: 0;
+          right: 0;
+          width: 30px;
+          height: 29px;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 25%;
+        bottom: 2rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: linear-gradient(134.85deg, #46DEFF -0.07%, rgba(70, 222, 255, 0) 85.26%);
+      }
+    }
+  }
+}
+/*
+.partnerUs {
+  :global {
+    .title {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 10%;
+        bottom: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(252, 198, 105, 0.6) 25%, rgba(252, 198, 105, 0) 93.75%);
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+        width: 20px;
+        height: 19px;
+        background: url('/icons/heart.svg') no-repeat center/cover;
+      }
+    }
+    .description {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(9, 178, 132, 0.6) 25%, rgba(9, 178, 132, 0) 93.75%);
+        @media (min-width:$xl) {
+          left: -10%;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(9, 178, 132, 0.6) 25%, rgba(9, 178, 132, 0) 93.75%);
+        @media (min-width:$xl) {
+          right: -10%;
+        }
+      }
+    }
+    .logos {
+      img {
+        @media (max-width: $xl) {
+          max-width: 50%;
+        }
+        @media (max-width: $lg) {
+          max-width: 33%;
+        }
+      }
+    }
+  }
+}
+*/
+.supportUs {
+  :global {
+    .title {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 20px;
+        height: 19px;
+        transform: rotate(-45deg);
+        background: url('/icons/heart.svg') no-repeat center/cover;
+        @media (min-width:$xl) {
+          left: -15%;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -1rem;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(134.85deg, #46DEFF -0.07%, rgba(70, 222, 255, 0) 85.26%);
+        @media (min-width:$xl) {
+          right: -15%;
+        }
+      }
+    }
+    .description {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(134.85deg, #46DEFF -0.07%, rgba(70, 222, 255, 0) 85.26%);
+        @media (min-width:$xl) {
+          left: -10%;
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -1rem;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(252, 198, 105, 0.6) 25%, rgba(252, 198, 105, 0) 93.75%);
+        @media (min-width:$xl) {
+          right: -10%;
+        }
+      }
+    }
+    .card {
+      .item {
+        .item-title {
+          @media (max-width: $lg) {
+            font-size: 1.0625rem;  // 17px
+          }
+        }
+        .more {
+          opacity: 0;
+          @media (max-width: $lg) {
+            display: none;
+          }
+        }
+        &:hover {
+          .more {
+            opacity: 1;
+            + span {
+              svg {
+                path {
+                  stroke: $color-red;
+                }
+              }
+            }
+          }
+        }
+      }
+      .item + .item {
+        border-top: 1px solid rgba(75, 74, 91, 0.2);
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        @media (min-width: $lg) {
+          margin-top: 2rem;
+          padding-top: 2rem;
+        }
+      }
+    }
+  }
+}

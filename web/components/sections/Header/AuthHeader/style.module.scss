@@ -1,0 +1,65 @@
+@import 'styles/variables';
+
+.header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-weight: 600;
+  :global {
+    .mainMenu {
+      padding-left: 3.75rem;
+      padding-right: 2em;
+      .menu_link {
+        display: inline-block;
+        padding-bottom: 0.25rem;
+        transition-property: none;
+        transition-duration: 0s;
+        transition-timing-function: unset;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background-color: $color-red;
+          transition: all 0.2s linear;
+          bottom: 0;
+          left: 50%;
+        }
+        &:hover {
+          opacity: 1;
+          color: $color-red;
+        }
+        &.active {
+          opacity: 1;
+          color: $color-red;
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+      a + a {
+        margin-left: 3.5rem;
+      }
+    }
+  }
+}
+
+.mobileHeader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  :global {
+    .logo {
+      max-width: 85px;
+      svg {
+        display: block;
+      }
+      @media (min-width: $lg) {
+        max-width: 115px;
+      }
+    }
+  }
+}

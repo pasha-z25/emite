@@ -1,0 +1,1 @@
+export { FAQlist } from './FAQ'

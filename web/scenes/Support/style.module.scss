@@ -1,0 +1,226 @@
+@import 'styles/variables';
+
+.wrapper {
+  :global {
+    .main-title {
+      &::before {
+        top: 40%;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $xl) {
+          top: 55%;
+          left: 15%;
+          width: 16px;
+          height:16px;
+        }
+      }
+      &::after {
+        top: 40%;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        @media (min-width: $xl) {
+          top: 45%;
+          right: 10%;
+          width: 12px;
+          height:12px;
+        }
+      }
+      .color-red {
+        &::before {
+          top: -30%;
+          left: 40%;
+          width: 8px;
+          height: 8px;
+          @media (min-width: $xl) {
+            top: initial;
+            left: -5%;
+            bottom: -20%;
+          }
+        }
+        &::after {
+          top: 0;
+          right: 5%;
+          width: 4px;
+          height: 4px;
+          @media (min-width: $xl) {
+            top: 55%;
+            right: -5%;
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
+    .swiper-container {
+      padding: 2rem 1.5rem 3rem 1.5rem;
+      margin-top: -2rem;
+      @media (min-width: $lg) {
+        max-width: 82%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: $xl) {
+        margin-bottom: -2rem;
+      }
+      @media (min-width: $xxl) {
+        max-width: 77.5%;
+      }
+    }
+    .swiper-wrapper {
+      padding-right: 1.5rem;
+    }
+    .swiper-slide {
+      height: initial;
+      @media (max-width: $xl) {
+        width: auto;
+        flex-shrink: initial;
+      }
+    }
+    .contact-card {
+      min-width: 13rem;
+      height: 100%;
+      @media (min-width: $fhd) {
+        //align-items: center;
+        //text-align: center;
+        width: 100%;
+        max-width: 330px;
+        //max-width: 350px;
+        + .contact-card {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.textWrapper {
+  @media (min-width: $lg) {
+    max-width: 32rem;
+  }
+  &::before {
+    bottom: -2rem;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    @media (min-width: $lg) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &::after {
+    right: 1rem;
+    bottom: 1rem;
+    width: 12px;
+    height: 12px;
+    @media (min-width: $lg) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.secondaryTitle {
+  &::after {
+    top: 50%;
+    right: 5%;
+    width: 25px;
+    height: 23px;
+    background: url('/icons/heart.svg') no-repeat center/cover;
+    @media (min-width: $lg) {
+      right: -5%;
+    }
+    @media (min-width: $xl) {
+      right: -10%;
+    }
+  }
+}
+
+.faqList {
+  :global {
+    .content {
+      &::before {
+        content: url('/icons/question-ask.svg');
+        position: absolute;
+        top: 0.25rem;
+        left: 0;
+      }
+      .close {
+        position: absolute;
+        top: 0.25rem;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.5rem;
+          left: 0;
+          width: 16px;
+          height: 2px;
+          background-color: #4B4A5B;
+          transition: all 0.2s linear;
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0.5rem;
+          left: 0;
+          width: 16px;
+          height: 2px;
+          background-color: #4B4A5B;
+          transform: rotate(90deg);
+          transition: all 0.2s linear;
+        }
+      }
+      .title {
+        &:hover {
+          @media (min-width: $lg) {
+            p {
+              color: $color-red;
+            }
+            .close {
+              &::before, &::after {
+                background-color: $color-red;
+              }
+            }
+          }
+        }
+        &:focus {
+          p {
+            color: $color-red;
+          }
+          .close {
+            &::before, &::after {
+              background-color: $color-red;
+            }
+          }
+        }
+      }
+    }
+    .description {
+      padding-top: 0;
+      padding-bottom: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.2s linear;
+    }
+    .active {
+      .description {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+      }
+      .description {
+        max-height: 50vh;
+      }
+      .close {
+        &::after {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}

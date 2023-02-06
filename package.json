@@ -1,0 +1,16 @@
+{
+  "name": "e-mite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build --parallel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
+}

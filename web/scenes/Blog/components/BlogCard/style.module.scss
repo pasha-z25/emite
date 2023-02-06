@@ -1,0 +1,47 @@
+@import 'styles/variables';
+
+.card {
+  + .card {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(75, 74, 91, 0.2);
+  }
+  :global {
+    .image-wrapper {
+      width: 100%;
+      position: relative;
+      @media (min-width: $lg) {
+        max-width: 45%;
+        padding-right: 2rem;
+      }
+      .image-link {
+        display: block;
+        height: 100%;
+        aspect-ratio: 16/9;
+        @media (max-width: $xl) {
+          @supports not (aspect-ratio: 16/9) {
+            min-height: 50vw;
+          }
+        }
+      }
+    }
+    .text-wrapper {
+      .title {
+        margin-top: 1rem;
+      }
+      .post-reading {
+        flex: 1;
+        margin-left: 1.5rem;
+        padding-left: 1.5rem;
+        border-left: 1px solid rgba(75, 74, 91, 0.4);
+      }
+      @media (min-width: $lg) {
+        max-width: 55%;
+        .title {
+          margin-top: 0;
+        }
+      }
+
+    }
+  }
+}
